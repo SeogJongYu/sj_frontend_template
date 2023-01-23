@@ -3,6 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const dotenv = require("dotenv");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
@@ -25,6 +26,9 @@ module.exports = {
       React: "react",
     }),
     isDevelopment && new ReactRefreshWebpackPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(dotenv.config({ path: ".env" }).parsed),
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {

@@ -13,5 +13,8 @@ module.exports = {
     ],
     ["@babel/preset-react"],
   ],
-  plugins: [isDevelopment && "react-refresh/babel"].filter(Boolean),
+  plugins: [
+    "module:react-native-dotenv",
+    isDevelopment && "react-refresh/babel",
+  ].filter(Boolean),
 };

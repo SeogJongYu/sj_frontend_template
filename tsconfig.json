@@ -27,7 +27,7 @@
   "compilerOptions": {
     // "jsxImportSource": "@emotion/react",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./src/*"]
     },
     "plugins": [
       {
@@ -53,6 +53,6 @@
       }
     ]
   },
-  "include": ["src"],
+  "include": ["src", "src/Config.tsg.tssrc/Config.tsonfig.ts"],
   "exclude": ["node_modules"]
 }
