@@ -15,14 +15,14 @@ const LoginRequiredRoute = ({children}: LoginRequiredRouteProps) => {
   // const {data: user, isLoading} = useCurrentUser();
   const {data: user, isLoading} = getUserSample();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (!user) {
-    alert('This service requires login. Go to the login page.');
-    return <Navigate to="/user/login" replace />;
-  }
+  // if (!user) {
+  //   alert('This service requires login. Go to the login page.');
+  //   return <Navigate to="/user/login" replace />;
+  // }
 
   return <>{children}</>;
 };

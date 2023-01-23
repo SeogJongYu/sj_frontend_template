@@ -1,26 +1,26 @@
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common");
+const {merge} = require('webpack-merge');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: "development",
-  devtool: "cheap-module-source-map",
+  mode: 'development',
+  devtool: 'cheap-module-source-map',
   output: {
-    filename: "[name].[contenthash].js",
-    publicPath: "/",
+    filename: '[name].[contenthash].js',
+    publicPath: '/',
   },
   module: {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
   devServer: {
     open: false,
-    host: "0.0.0.0",
+    host: '0.0.0.0',
     port: 8080,
-    allowedHosts: "all",
+    allowedHosts: 'all',
     historyApiFallback: true,
     // proxy: [
     //   {

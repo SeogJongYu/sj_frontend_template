@@ -1,18 +1,18 @@
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common");
-const path = require("path");
+const {merge} = require('webpack-merge');
+const common = require('./webpack.common');
+const path = require('path');
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = merge(common, {
-  mode: "production",
+  mode: 'production',
   devtool: false,
   output: {
-    filename: "[name].[contenthash].js",
-    path: path.join(__dirname, "/build"),
-    publicPath: "/",
+    filename: '[name].[contenthash].js',
+    path: path.join(__dirname, '/build'),
+    publicPath: '/',
     clean: true,
   },
   module: {
@@ -21,9 +21,9 @@ module.exports = merge(common, {
         test: /\.(sa|sc|c)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
       },
     ],
@@ -43,7 +43,7 @@ module.exports = merge(common, {
       new CssMinimizerPlugin(),
     ],
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
     },
   },
 });

@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import {QueryClient, QueryClientProvider} from 'react-query';
 
-import "./App.scss";
-import apiQuery from "./api/apiQuery";
-import { ReactNode } from "react";
-import HomeRoutes from "./routes/HomeRoutes";
+import './App.scss';
+import apiQuery from './api/apiQuery';
+import {ReactNode} from 'react';
+import HomeRoutes from './routes/HomeRoutes';
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate replace to="/home" />} />
           <Route path="/home/*" element={<HomeRoutes />} />
-          <HomeRoutes />
         </Routes>
       </BrowserRouter>
     </Providers>
@@ -28,7 +27,7 @@ const queryClient = new QueryClient({
   },
 });
 
-function Providers({ children }: { children: ReactNode }) {
+function Providers({children}: {children: ReactNode}) {
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
