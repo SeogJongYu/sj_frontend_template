@@ -16,6 +16,14 @@ module.exports = {
         use: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
+        test: /\.(ico|png|jpg|jpeg|gif|woff|woff2|ttf|eot)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
