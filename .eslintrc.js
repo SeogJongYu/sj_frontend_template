@@ -59,9 +59,9 @@ const COMMON_RULES = {
       ignore: ['@env'],
     },
   ],
-  'react-native/no-inline-styles': 'off',
   'react/jsx-uses-react': 'off',
   'react/react-in-jsx-scope': 'off',
+  'react/no-unknown-property': ['error', {ignore: ['css']}],
 };
 
 module.exports = {
@@ -73,7 +73,7 @@ module.exports = {
     {
       files: '**/*.+(ts|tsx)',
       parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint', 'react-native'],
+      plugins: ['@typescript-eslint'],
       extends: [
         ...COMMON_EXTENDS,
         'plugin:@typescript-eslint/eslint-recommended',
@@ -127,6 +127,5 @@ module.exports = {
         extensions,
       },
     },
-    'import/ignore': ['react-native'],
   },
 };

@@ -15,10 +15,9 @@ module.exports = {
       '@babel/preset-react',
       {runtime: 'automatic', importSource: '@emotion/react'},
     ],
-    '@emotion/babel-preset-css-prop',
   ],
   plugins: [
-    '@emotion',
+    '@emotion/babel-plugin',
     'module:react-native-dotenv',
     'babel-plugin-twin',
     'babel-plugin-macros',
