@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import tw, {styled, css} from 'twin.macro';
 
+import LoginRequiredRoute from '~/components/LoginRequiredRoute';
+
 const ButtonLayout = styled.button<{isActive?: boolean}>(({isActive}) => [
   tw`py-2 px-10 rounded-xl transition-all`,
   css`
@@ -15,6 +17,7 @@ export default function Home() {
   return (
     <div className="text-2xl text-blue-600">
       Home 페이지에 오신걸 환영합니다.
+      <LoginRequiredRoute>ㅇ</LoginRequiredRoute>
       <div className="mt-6 flex justify-center">
         <ButtonLayout
           onClick={() => setIsActive(!isActive)}

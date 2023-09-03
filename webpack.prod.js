@@ -1,7 +1,6 @@
 const {merge} = require('webpack-merge');
-const common = require('./webpack.common');
 const path = require('path');
-
+const common = require('./webpack.common');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');

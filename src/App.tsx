@@ -1,9 +1,9 @@
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import {QueryClient, QueryClientProvider} from 'react-query';
-
-import './App.scss';
-import apiQuery from './api/apiQuery';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import {ReactNode} from 'react';
+
+import apiQuery from './api/apiQuery';
+import './App.scss';
 import HomeRoutes from './routes/HomeRoutes';
 
 function App() {

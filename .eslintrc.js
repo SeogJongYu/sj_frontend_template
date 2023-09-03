@@ -44,7 +44,19 @@ const COMMON_RULES = {
     'warn',
     {
       'newlines-between': 'always',
+      groups: [
+        ['builtin', 'external'],
+        'internal',
+        'parent',
+        'sibling',
+        'index',
+      ],
       pathGroups: [
+        {
+          pattern: 'react',
+          group: 'builtin',
+          // position: 'before',
+        },
         {
           pattern: '~/**',
           group: 'parent',
@@ -78,6 +90,7 @@ module.exports = {
         ...COMMON_EXTENDS,
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:import/typescript',
       ],
       rules: {
         'react/prop-types': 'off',
